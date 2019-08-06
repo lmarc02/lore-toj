@@ -91,4 +91,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--<suite name="My test suite">-->
+        <!--<listeners>-->
+            <!--<listener class-name="helpers.CustomListener" />-->
+        <!--</listeners>-->
+        <!--<test name="numbersXML">-->
+            <!--<parameter name="value" value="1" />-->
+            <!--<parameter name="isEven" value="false" />-->
+            <!--<classes>-->
+                <!--<class name="baeldung.com.ParametrizedTests" />-->
+            <!--</classes>-->
+        <!--</test>-->
+    <!--</suite>-->
+
 </project>

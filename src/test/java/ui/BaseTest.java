@@ -8,10 +8,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import helpers.BrowserName;
+import helpers.CustomListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.Listeners;
 
-@Listeners(helpers.Listener.class)
+@Listeners(CustomListener.class)
 public class BaseTest {
   private WebDriver driver;
   private final static String BROWSER_SYSTEM_VAR = "browser";
