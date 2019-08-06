@@ -8,29 +8,25 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
+
 
 
 public class Listener implements ITestListener {
-    List<String> reportList;
+
 
     @Override
     public void onTestStart(ITestResult result) {
-
-
-
 
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println();
         writeToHtml("The name of the testcase passed is :"+result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        writeToHtml("The name of the testcase failed is :"+result.getName());
+        writeToHtml("The name of the testcase failed is :" + result.getStatus());
     }
 
     @Override
@@ -45,9 +41,8 @@ public class Listener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        writeToHtml(context.getName()+" test case started");
         try {
-            File myObj = new File("/Users/loredana.marc/Documents/workspace/svauto/src/test/resources/report.html");
+            File myObj = new File("/Users/loredana.marc/Documents/workspace/lore-toj/src/test/resources/report.html");
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
@@ -57,7 +52,7 @@ public class Listener implements ITestListener {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
+        writeToHtml(context.getName()+ " test case started");
     }
 
     public void writeToHtml(String testResult){
@@ -76,7 +71,6 @@ public class Listener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-
 
     }
 }

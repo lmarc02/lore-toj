@@ -49,7 +49,7 @@ public class CartPageTest extends BaseTest {
         productDetailPage.verify();
     }
 
-    @Test
+    @Test(description = "Check the message and the number on Cart icon when the cart is empty.")
     public void testCartPageNoItems(){
         openCartPage();
         Assert.assertEquals(PAGE_TITLE, cartPage.getPageTitle(), "Cart Page title is not correct.");
@@ -68,13 +68,13 @@ public class CartPageTest extends BaseTest {
 
 
 
-    @Test
+    @Test(description = "After one product was added in the cart the number on Cart icon should be 1.")
     public void testAddProductToCart(){
         addProductToCart();
         Assert.assertEquals("1", productDetailPage.getNoOfItemsOnCart(), "The number of products from Cart should be 1.");
     }
 
-    @Test
+    @Test(description = "Verify the confirmation message after an order was completed.")
     public void testOrderSubmitForProduct(){
         addProductToCart();
         productDetailPage.clickCartIcon();

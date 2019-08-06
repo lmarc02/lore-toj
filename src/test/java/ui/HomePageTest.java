@@ -45,7 +45,7 @@ public class HomePageTest extends BaseTest {
         Assert.assertEquals(TESTIMONIAL_THIRD_DESCRIPTION, homePage.getThirdPicDescription(), "The third description on testimonial is not correct.");
     }
 
-    @Test
+    @Test(description = "Verify if the home page is displayed correctly")
     void testTopContainerUi(){
         openHomePage();
         Assert.assertTrue(homePage.isTopContainerDisplayed(), "Top container is not displayed. ");
