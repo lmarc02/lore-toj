@@ -3,14 +3,15 @@
 <suite name="Test Suite" verbose="1" configfailurepolicy="continue">
 
 <!--  <listeners>-->
-<!--    <listener class-name="helpers.Listener"/>-->
+<!--    <listener class-name="helpers.CustomListenerstener"/>-->
 <!--  </listeners>-->
 
   <test name="Workshop tests">
     <classes>
       <class name="ui.LoginTest"></class>
       <class name = "ui.CartPageTest"></class>
-
+      <class name = "ui.HomePageTest"></class>
+      <class name = "ui.WishlistTest"></class>
     </classes>
   </test>
 

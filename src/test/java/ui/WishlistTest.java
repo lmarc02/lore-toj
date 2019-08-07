@@ -35,21 +35,21 @@ public class WishlistTest extends BaseTest {
 
 
 
-    @Test
+    @Test(description = "Check the message displayed on Wishlist when no product was added.")
     public void testNoItemsOnWishlist(){
         openWishlist();
         Assert.assertEquals(NO_PRODUCT_TO_WISHLIST_MSG, this.wishlistPage.getWishlistMessage(), "NO PRODUCTS WERE ADDED TO THE WISHLIST message is not displayed correctly. ");
     }
 
 
-    @Test
+    @Test (description = "Add one product item from Home Page to Wishlist.")
     public void addItemsToWishlist(){
         addOneItemToWishlist();
         openWishlist();
         Assert.assertTrue(wishlistPage.isWishlistItemDisplayed(),  "The wishList element is not displayed.");
     }
 
-    @Test
+    @Test (description = "Click Wishlist button on two products from Home Page and check if they are displayed correctly on Wishlist.")
     public void addTwoItemsToWishlist(){
         addOneItemToWishlist();
         homePage.clickWishlistBtnOnSecondProduct();
@@ -57,7 +57,7 @@ public class WishlistTest extends BaseTest {
         Assert.assertTrue(wishlistPage.areTwoElementsDIsplayed(), "The two items on Wishlist are not displayed.");
     }
 
-    @Test
+    @Test (description = "Remove one item from Wishlist and check if the product is correctly removed.")
     public void removeItemFromWishlist(){
         addOneItemToWishlist();
         openWishlist();

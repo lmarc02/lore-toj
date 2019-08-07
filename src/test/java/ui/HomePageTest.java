@@ -35,7 +35,7 @@ public class HomePageTest extends BaseTest {
             "1." +
             "2." +
             "3. ")
-    public void checkTestimonial(){
+    public void testCheckTestimonial(){
         openHomePage();
         homePage.clickFirstPicOnTestimonial();
         Assert.assertEquals(TESTIMONIAL_FIRST_DESCRIPTION, homePage.getFirstPicDescription(), "The author decription on testimonial is not correct.");
@@ -67,17 +67,17 @@ public class HomePageTest extends BaseTest {
     void testClickOnBlogItem(){
         openHomePage();
         homePage.clickOnFirstBlogItem();
-        Assert.assertTrue( homePage.isFirstItemBlogPageDisplayed(),"The items Blog Page is not displayed when clicking on a blog item.");
+        Assert.assertTrue( homePage.isFirstItemBlogPageDisplayed(),"The items Blog Page is not displayed when clicking on a blog item from Home Page.");
     }
 
-    @Test(description = "Blog page is displayed after clicking on 'VIEW ALL BLOG' button.")
+    @Test(description = "Blog page is displayed after clicking on 'VIEW ALL BLOG' button displayed on Home Page.")
     public void clickViewAllBlogBtn(){
         openHomePage();
         homePage.clickViewAllBlogBtn();
         Assert.assertTrue(blogPage.isBlogPageDisplayed(), "Blog page is not displayed when clicking on VIEW ALL BLOG button from home page.");
     }
 
-    @Test(description = "Shop Page should be displayed after clicking on 'SHOP NOW' button.")
+    @Test(description = "Shop Page should be displayed after clicking on 'SHOP NOW' button displayed on Home Page.")
     public void testShopNowBtn(){
         openHomePage();
         homePage.verify();
