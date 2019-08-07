@@ -58,7 +58,7 @@ public class CartPageTest extends BaseTest {
         Assert.assertEquals(EMPTY_CART_MESSAGE, cartPage.getEmptyCartMsg(), "The empty Cart page message is not correct. ");
     }
 
-    @Test(description = "Click on 'RETURN TO SHOP' btn with no product in cart.")
+    @Test(description = "Click on 'RETURN TO SHOP' button with no product in cart.")
     public void testClickReturnToShopBtn(){
         openCartPage();
         cartPage.clickReturnToShopBtn();

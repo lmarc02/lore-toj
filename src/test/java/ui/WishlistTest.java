@@ -49,7 +49,7 @@ public class WishlistTest extends BaseTest {
         Assert.assertTrue(wishlistPage.isWishlistItemDisplayed(),  "The wishList element is not displayed.");
     }
 
-    @Test (description = "Click Wishlist button on two products from Home Page and check if they are displayed correctly on Wishlist.")
+    @Test (description = "Click Wishlist button displayed on two products from Home Page and check if they are displayed correctly on Wishlist.")
     public void addTwoItemsToWishlist(){
         addOneItemToWishlist();
         homePage.clickWishlistBtnOnSecondProduct();

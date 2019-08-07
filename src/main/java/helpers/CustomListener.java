@@ -80,7 +80,7 @@ public class CustomListener implements ITestListener {
                 bw.write("<h3>Test reports</h3><br>");
 
                 bw.write("<table class=\"table table-hover\">\n" +
-                                  "  <thead>\n" +
+                                  "  <thead style=\"background-color:#E6E6E6;\">\n" +
                                   "    <tr>");
                 bw.write("<th scope=\"col\">#</th>\n" +
                                   "      <th scope=\"col\">Test name</th>\n" +
@@ -101,24 +101,22 @@ public class CustomListener implements ITestListener {
     public static void writeToHtmlFile(String testName, String testDescription, String testResult){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH, true));
-            if (testResult.equals("Fail")) {
-            bw.write("<tr style=\"background-color:#f4cccc;\">\n");
-            bw.write("<th scope=\"row\">" + count + "</th>");
-            bw.write("<td>" + testName + "</td>");
-            bw.write("<td>" + testDescription + "</td>");
-            bw.write("<td>" + testResult + "</td>");
-            bw.write("</tr>");
-            bw.close();}
+            if (testResult.equals("Fail"))
+                bw.write("<tr style=\"background-color:#f4cccc;\">\n");
+            else if (testResult.equals("Pass"))
+                bw.write("<tr style=\"background-color:#d9ead3;\">\n");
+            else
+                bw.write("<tr>\n");
 
-            if(testResult.equals("Pass")){
-            bw.write("<tr>\n");
             bw.write("<th scope=\"row\">" + count + "</th>");
             bw.write("<td>" + testName + "</td>");
             bw.write("<td>" + testDescription + "</td>");
             bw.write("<td>" + testResult + "</td>");
             bw.write("</tr>");
             bw.close();
-            }
+
+
+
         } catch (Exception e) {
             System.out.println("We couldn't write to the file.");
         }

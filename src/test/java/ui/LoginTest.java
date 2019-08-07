@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
         this.loginPage = new LoginPage(getDriver());
     }
 
-    @Test(description = "Log in using invalid credentials.")
+    @Test(description = "Login using invalid credentials.")
     public void testNegativeLogin() {
         this.loginPage.open();
         this.loginPage.verify();

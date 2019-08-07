@@ -20,9 +20,6 @@ public class BasePage extends WebUIPage {
     PageFactory.initElements(driver, this);
     headerFooter = new HeaderFooter(driver);
   }
-//  public void waitToFillInFIelds(){
-//
-//  }
 
   @Override
   protected boolean isCurrent() {
