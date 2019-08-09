@@ -81,7 +81,7 @@ public class HomePage extends BasePage {
     @Override
     protected boolean isValid() {
         super.isValid();
-        return areVisible(firstForLadiesContainer, firstWishlisElement);
+        return areVisible(firstForLadiesContainer);
     }
 
     public void open(){
@@ -96,7 +96,7 @@ public class HomePage extends BasePage {
     public void clickWishlistBtnOnSecondProduct(){
         secondWishlistBtn.click();
     }
-    public void clickCartLink(){
+    public void clickHeaderCartLink(){
         cartLink.click();
     }
 

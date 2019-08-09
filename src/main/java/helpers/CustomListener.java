@@ -56,8 +56,9 @@ public class CustomListener implements ITestListener {
                               "</table>\n" +
                               "\n" +
                               "</div> <!-- /container -->\n" +
-                              "</body>\n" +
-                              "</html>");
+                              "</body>\n"
+                    //+ "</html>"
+            );
             bw.close();
         } catch (Exception e) {
             System.out.println("We couldn't write to the file.");
@@ -104,18 +105,17 @@ public class CustomListener implements ITestListener {
             if (testResult.equals("Fail"))
                 bw.write("<tr style=\"background-color:#f4cccc;\">\n");
             else if (testResult.equals("Pass"))
-                bw.write("<tr style=\"background-color:#d9ead3;\">\n");
+                bw.write("<tr>\n");
             else
                 bw.write("<tr>\n");
 
             bw.write("<th scope=\"row\">" + count + "</th>");
             bw.write("<td>" + testName + "</td>");
             bw.write("<td>" + testDescription + "</td>");
+
             bw.write("<td>" + testResult + "</td>");
             bw.write("</tr>");
             bw.close();
-
-
 
         } catch (Exception e) {
             System.out.println("We couldn't write to the file.");

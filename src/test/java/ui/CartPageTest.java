@@ -34,7 +34,7 @@ public class CartPageTest extends BaseTest {
     public void openCartPage(){
         homePage.open();
         homePage.verify();
-        homePage.clickCartLink();
+        homePage.clickHeaderCartLink();
         cartPage.verify();
     }
 
@@ -49,7 +49,11 @@ public class CartPageTest extends BaseTest {
         productDetailPage.verify();
     }
 
-    @Test(description = "Check the message and the number on Cart icon when the cart is empty.")
+    @Test(description = "Check the message and the number on Cart icon when the cart is empty.\n" +
+                        "Steps:" +
+                        "1. Open and verify Cart page.\n" +
+                        "2. Click on header Cart icon and verify Cart Page.\n" +
+                        "3. Check the Cart Page title text and the empty cart message text.'")
     public void testCartPageNoItems(){
         openCartPage();
         Assert.assertEquals(PAGE_TITLE, cartPage.getPageTitle(), "Cart Page title is not correct.");
@@ -58,7 +62,12 @@ public class CartPageTest extends BaseTest {
         Assert.assertEquals(EMPTY_CART_MESSAGE, cartPage.getEmptyCartMsg(), "The empty Cart page message is not correct. ");
     }
 
-    @Test(description = "Click on 'RETURN TO SHOP' button with no product in cart.")
+    @Test(description = "Click on 'RETURN TO SHOP' button with no product in cart.\n" +
+            "Steps:\n" +
+            "1. Open and verify Cart page.\n" +
+            "2. Click on header Cart icon and verify Cart Page.\n" +
+            "3. Click on 'RETURN TO SHOP' button.\n" +
+            "4. Shop Page should be displayed.")
     public void testClickReturnToShopBtn(){
         openCartPage();
         cartPage.clickReturnToShopBtn();
@@ -68,7 +77,7 @@ public class CartPageTest extends BaseTest {
 
 
 
-    @Test(description = "After one product was added in the cart the number on Cart icon should be 1.")
+    @Test(description = "After one product was added in the cart the number on Cart icon should be 1.\n")
     public void testAddProductToCart(){
         addProductToCart();
         Assert.assertEquals("1", productDetailPage.getNoOfItemsOnCart(), "The number of products from Cart should be 1.");
